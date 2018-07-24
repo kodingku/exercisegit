@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Refactory (Batch 16: trabia) - Precourse Instruction</title>
+    <link href=https://refactory-id.s3.amazonaws.com/public/assets/css/application.min.css rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href=https://refactory-id.s3.amazonaws.com/public/assets/vendor/messenger/build/css/messenger-theme-flat.css>
+    <!-- as of IE9 cannot parse css files with more that 4K classes separating in two files -->
+    <!--[if IE 9]>
+        <link href="css/application-ie9-part2.css" rel="stylesheet">
+    <![endif]-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2f4247">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <script>
+        /* yeah we need this empty stylesheet here. It's cool chrome & chromium fix
+         chrome fix https://code.google.com/p/chromium/issues/detail?id=167083
+         https://code.google.com/p/chromium/issues/detail?id=332189
+         */
+    </script>
+</head>
+<body>
+<!--
+  Main sidebar seen on the left. may be static or collapsing depending on selected state.
+
+    * Collapsing - navigation automatically collapse when mouse leaves it and expand when enters.
+    * Static - stays always open.
+-->
+<nav id="sidebar" class="sidebar" role="navigation">
+    <!-- need this .js class to initiate slimscroll -->
+    <div class="js-sidebar-content">
+        <header class="logo hidden-sm-down">
+            <a href="/">
+                <img src="/images/kits/Refactory-Logo003.png" height="48px"/>
+            </a>
+        </header>
+        <!-- seems like lots of recent admin template have this feature of user info in the sidebar.
+             looks good, so adding it and enhancing with notifications -->
+        <div class="sidebar-status hidden-md-up">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="thumb-sm avatar pull-xs-right">
+                    <img src="https://img.refactory.id/unsafe/48x48/https://www.gravatar.com/avatar/80e0376a6f1d62bbeee5c7d387130cdd" alt="" class="img-circle">
+                </span>
+                <!-- .circle is a pretty cool way to add a bit of beauty to raw data.
+                     should be used with bg-* and text-* classes for colors -->
+                                &nbsp;
+                <strong>luthfi azizi</strong>
+                <b class="caret"></b>
+            </a>
+            <!-- #notifications-dropdown-menu goes here when screen collapsed to xs or sm -->
+        </div>
+        <!-- every .sidebar-nav may have a title -->
+                <h5 class="sidebar-nav-title">Learning System</h5>
+        <ul class="sidebar-nav">
+            <li>
+                <a href="https://app.refactory.id/lms">
+                    <span class="icon">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                    Dashboard
+                </a>
+            </li>
+                        <li>
+                <a class="collapsed" href="#getting-started" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="fa fa-bolt"></i>
+                    </span>
+                    Getting started
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="getting-started" class="collapse">
+                    <li>
+                        <a href="https://app.refactory.id/lms/start">
+                            How to
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://app.refactory.id/conduct">
+                            Code of Conduct
+                        </a>
+                    </li>
+                </ul>
+            </li>
+                        <li>
+                <!-- an example of nested submenu. basic bootstrap collapse component -->
+                <a href="https://app.refactory.id/lms/overview">
+                    <span class="icon">
+                        <i class="fa fa-graduation-cap"></i>
+                    </span>
+                    Curriculum
+                </a>
+            </li>
+            <li>
+                <!-- an example of nested submenu. basic bootstrap collapse component -->
+                <a class="collapsed" href="#tasks-forms" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="fa fa-tasks"></i>
+                    </span>
+                    Assignments
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="tasks-forms" class="collapse">
+                    <li><a href="https://app.refactory.id/assignments/board">Overview</a></li>
+                    <li><a href="https://app.refactory.id/assignments/browse">Browse</a></li>
+                                        <li><a href="https://app.refactory.id/assignments/mypoint">My Points</a></li>
+                                                            <li><a href="https://app.refactory.id/assignments/opensource-links">Open Source</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="https://app.refactory.id/student-card">
+                    <span class="icon">
+                        <i class="fa fa-address-card"></i>
+                    </span>
+                    Student Card
+                </a>
+            </li>
+            <li>
+                <a href="/stuff">
+                    <span class="icon">
+                        <i class="fa fa-universal-access"></i>
+                    </span>
+                    Universal Access
+                </a>
+            </li>
+                        <li>
+                <a href="https://app.refactory.id/cvinfo">
+                    <span class="icon">
+                        <i class="fa fa-briefcase"></i>
+                    </span>
+                    Hiring Assistance
+                </a>
+            </li>
+            <li>
+                <a href="https://app.refactory.id/referral">
+                    <span class="icon">
+                        <i class="fa fa-link"></i>
+                    </span>
+                    Referral
+                </a>
+            </li>
+                        <li>
+                <a href="#feedback-modal-form" data-toggle="modal" data-target="#feedback-modal-form">
+                    <span class="icon">
+                        <i class="fa fa-comment"></i>
+                    </span>
+                    Feedback
+                    <sup class="text-success fw-semi-bold">
+                        Try it!
+                    </sup>
+                </a>
+            </li>
+        </ul>
+
+
+
+                <h5 class="sidebar-nav-title">Learning Progress</h5>
+        <!-- A place for sidebar notifications & alerts -->
+
+        <div class="sidebar-alerts">
+            <div class="alert fade in">
+                <span class="text-white fw-semi-bold">Overall</span> <br>
+                <div class="bg-gray-transparent progress-bar">
+                    <progress class="progress progress-xs progress-bar-gray-light mt-xs mb-0" value="100" max="100" style="width: 0%"></progress>
+                </div>
+                <small>0%</small>
+            </div>
+                    </div>
+                    </div>
+</nav>
+
+
+<div id="feedback-modal-form" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+      <form action="https://app.refactory.id/feedback" enctype="multipart/form-data" method="post" id="custom-form">
+      <input type="hidden" name="_hash" value="2b4aa20213ff8c72679ba53a096d7827" />
+      <input type="hidden" name="_token" value="jYmc6yNskg8wQ3LPTwKM0GVPRfq4RgT6fysbgXOP">
+        <!-- Modal content-->
+      <div class="modal-content" style="margin-top: 30%">
+        <div class="modal-header refactory-modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i></button>
+          <h4 style="color: #1a1a1a" class="modal-title">Do you have any feedback for us?</h4>
+        </div>
+        <div class="modal-body refactory-modal-body">
+          <div class="row" style="margin: 0; padding: 20px">
+            <div class="col-md-12">
+              With this form you can send Your Feedback, Comment, or Feeling when you be part of Refactory family.
+              <br>
+              <small>If you want to send it as <strong>Anonymous</strong> check the <code>Send as Anonymous</code> checkbox</small>
+            </div>
+            <div class="col-md-12" style="padding-top: 20px;">
+              <div class="checkbox abc-checkbox abc-checkbox-success">
+                  <input id="anonymous" type="checkbox" checked>
+                  <label for="anonymous">
+                      <strong>Send as Anonymous</strong>
+                  </label>
+              </div>
+            </div>
+            <div class="col-xs-12" id="student-email" style="padding: 10px; display:none">
+              <label for="email">Email</label>
+              <input type="text" readonly class="form-control" id="email-input" name="email" value="luthfiazizi11@gmail.com">
+            </div>
+            <div class="col-xs-12" style="padding: 10px; margin-bottom: 10px;">
+              <label class="control-label text-md-right" for="markdown">
+                  Markdown Editor
+              </label>
+              <textarea class="form-control" name="description" id="markdown" data-provide="markdown" rows="6" required></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer refactory-modal-footer">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  </form>
+</div>
+<script>
+  function getId(id) {
+    return document.getElementById(id);
+  }
+  var checkbox = getId('anonymous');
+  var email = getId('student-email');
+  var emailInput = getId('email-input');
+
+  function showEmail () {
+    if (!checkbox.checked) {
+      email.style['display'] = 'block';
+      emailInput.disabled = false;
+    } else {
+      email.style['display'] = 'none';
+      emailInput.disabled = true;
+    }
+  }
+  checkbox.onclick = showEmail;
+  showEmail();
+</script>
+</div>
+<!-- This is the white navigation bar seen on the top. A bit enhanced BS navbar. See .page-controls in _base.scss. -->
+<nav class="page-controls navbar navbar-dashboard">
+    <div class="container-fluid">
+        <!-- .navbar-header contains links seen on xs & sm screens -->
+        <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <!-- whether to automatically collapse sidebar on mouseleave. If activated acts more like usual admin templates -->
+                    <a class="hidden-md-down nav-link" id="nav-state-toggle" href="#" data-toggle="tooltip" data-html="true" data-original-title="Turn<br>on/off<br>sidebar<br>collapsing" data-placement="bottom">
+                        <i class="fa fa-bars fa-lg"></i>
+                    </a>
+                    <!-- shown on xs & sm screen. collapses and expands navigation -->
+                    <a class="hidden-lg-up nav-link" id="nav-collapse-toggle" href="#" data-html="true" title="Show/hide<br>sidebar" data-placement="bottom">
+                        <span class="rounded rounded-lg bg-gray text-white hidden-md-up"><i class="fa fa-bars fa-lg"></i></span>
+                        <i class="fa fa-bars fa-lg hidden-sm-down"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- xs & sm screen logo -->
+            <a class="navbar-brand hidden-md-up" href="/">
+                <center>
+                    <img src="/images/kits/Refactory-Logo003.png" height="48px"/>
+                </center>
+            </a>
+        </div>
+
+        <!-- this part is hidden for xs screens -->
+        <div class="collapse navbar-collapse">
+            <!-- search form! link it to your search server -->
+            <form class="navbar-form pull-xs-left" role="search">
+                <div class="form-group">
+                    <div class="input-group input-group-no-border">
+                    <span class="input-group-addon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                        <input class="form-control" type="text" placeholder="Search Dashboard">
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav pull-xs-right">
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle dropdown-toggle-notifications nav-link" id="notifications-dropdown-toggle" data-toggle="dropdown">
+                        <span class="thumb-sm avatar pull-xs-left">
+                            <img src="https://img.refactory.id/unsafe/48x48/https://www.gravatar.com/avatar/80e0376a6f1d62bbeee5c7d387130cdd" alt="" class="img-circle">
+                        </span>
+
+                        &nbsp;<strong>luthfi azizi</strong>&nbsp;
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a class="dropdown-item" href="/student-card"><i class="glyphicon glyphicon-user"></i> &nbsp; My Account</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out"></i> &nbsp; Log Out</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown nav-item">
+                    <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                                <i class="fa fa-bell-o fa-lg"></i>
+                                            </a>
+                    <!-- ready to use notifications dropdown.  inspired by smartadmin template.
+                         consists of three components:
+                         notifications, messages, progress. leave or add what's important for you.
+                         uses Sing's ajax-load plugin for async content loading. See #load-notifications-btn -->
+                    <div class="dropdown-menu dropdown-menu-right animated fadeInUp" id="notifications-dropdown-menu">
+                        <section class="card notifications">
+                            <header class="card-header">
+                                <div class="text-xs-center mb-sm">
+                                    <strong>You have <span class="notification-count">0</span> notifications</strong>
+                                </div>
+                                <div class="btn-group btn-group-sm btn-group-justified" id="notifications-toggle" data-toggle="buttons">
+                                    <label class="btn btn-secondary active">
+                                        <!-- ajax-load plugin in action. setting data-ajax-load & data-ajax-target is the
+                                             only requirement for async reloading -->
+                                        <input type="radio" checked
+                                               data-ajax-trigger="change"
+                                               data-ajax-load="/me/notifications"
+                                               data-ajax-inherit-load="#load-notifications-btn"
+                                               data-ajax-target="#notifications-list"> Notifications
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input type="radio"
+                                               data-ajax-trigger="change"
+                                               data-ajax-load="/me/messages"
+                                               data-ajax-inherit-load="#load-notifications-btn"
+                                               data-ajax-target="#notifications-list"> Messages
+                                    </label>
+                                </div>
+                            </header>
+                            <!-- notification list with .thin-scroll which styles scrollbar for webkit -->
+                            <div id="notifications-list" class="list-group thin-scroll">
+
+                            </div>
+                            <footer class="card-footer text-sm">
+                                <!-- ajax-load button. loads demo/ajax/notifications.php to #notifications-list
+                                     when clicked -->
+                                <button class="btn-label btn-link pull-xs-right"
+                                        id="load-notifications-btn"
+                                        data-ajax-load="/me/notifications"
+                                        data-ajax-target="#notifications-list"
+                                        data-loading-text="<i class='fa fa-refresh fa-spin mr-xs'></i> Loading...">
+                                    <i class="fa fa-refresh"></i>
+                                </button>
+                                <span>Synced at: <small>10 Jul 2018 14:00</small></span>
+                            </footer>
+                        </section>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="chat-sidebar" id="chat">
+    <div class="chat-sidebar-content">
+        <header class="chat-sidebar-header">
+            <h5 class="chat-sidebar-title">Contacts</h5>
+            <div class="form-group no-margin">
+                <div class="input-group input-group-dark">
+                    <input class="form-control fs-mini" id="chat-sidebar-search" type="text" placeholder="Search...">
+                    <span class="input-group-addon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </div>
+            </div>
+        </header>
+        <div class="chat-sidebar-contacts chat-sidebar-panel open">
+            <h5 class="sidebar-nav-title">Today</h5>
+            <div class="list-group chat-sidebar-user-group">
+                <a class="list-group-item" href="#chat-sidebar-user-1">
+                    <i class="fa fa-circle text-success pull-xs-right"></i>
+                    <span class="thumb-sm pull-xs-left mr">
+                        <img class="img-circle" src=https://refactory-id.s3.amazonaws.com/public/assets/img/avatar.pngalt="...">
+                    </span>
+                    <h6 class="message-sender">Slack Bot</h6>
+                    <p class="message-preview">Hey! What's up? So many times since we</p>
+                </a>
+            </div>
+        </div>
+        <div class="chat-sidebar-chat chat-sidebar-panel" id="chat-sidebar-user-1">
+            <h6 class="title">
+                <a class="js-back" href="#">
+                    <i class="fa fa-angle-left mr-xs"></i>
+                    Slack Bot
+                </a>
+            </h6>
+            <ul class="message-list">
+                <li class="message">
+                    <span class="thumb-sm">
+                        <img class="img-circle" src=https://refactory-id.s3.amazonaws.com/public/assets/img/avatar.pngalt="...">
+                    </span>
+                    <div class="message-body">
+                        Hey! What's up?
+                    </div>
+                </li>
+                <li class="message from-me">
+                    <span class="thumb-sm">
+                        <img class="img-circle" src=https://refactory-id.s3.amazonaws.com/public/assets/img/avatar.pngalt="...">
+                    </span>
+                    <div class="message-body">
+                        I am here!
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <footer class="chat-sidebar-footer form-group">
+            <input class="form-control input-dark" id="chat-sidebar-input" type="text"  placeholder="Type your message">
+        </footer>
+    </div>
+</div>
+
+<div class="content-wrap">
+    <!-- main page content. the place to put widgets in. usually consists of .row > .col-lg-* > .widget.  -->
+    <main id="content" class="content" role="main">
+        <ol class="breadcrumb">
+            <li>YOU ARE HERE</li>
+            <li>Batch 16: trabia</li>
+            <li class="active">Precourse Instruction</li>
+        </ol>
+        <h1 class="page-title">    <small>Precourse Instruction</small>
+</h1>
+
+        
+        <p>Welcome to the Refactory Preparation Season. Preparation items are splitted to 3 main areas: <strong>Mobile Programming, Backend Programming, and DevOps</strong>. Some items can also be applied to all main areas. So, complete items based on your interest.</p>
+<p>All progress can be upload through menu <em>Assignment &gt; Overview</em>. Drag to <strong>Doing</strong> when you will work on a task. And drag to <strong>Ready</strong> when you are ready to upload your progress.</p>
+<h3>Installing Development tools</h3>
+<p><em>Estimation : 1 day</em></p>
+<p>All applicant MUST install these development tools</p>
+<ul>
+<li>OS Ubuntu latest (or your preferred OS. Just remember you must use Nix based OS)</li>
+<li>Git</li>
+<li>Node JS</li>
+<li>Docker
+<br><em>Ref</em> : <a href="https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository">https://docs.docker.com/engine/installation/linux/ubuntu/#install-using-the-repository</a>
+</li>
+<li>Text Editor like Visual Studio Code or Atom Editor</li>
+</ul>
+<h4>Mobile Programming:</h4>
+<ul>
+<li>Android SDK + Android Studio</li>
+<li>Genymotion (optional, you can use AVD instead)
+<br><em>Ref</em>: <a href="https://www.genymotion.com/fun-zone/">https://www.genymotion.com/fun-zone/</a>
+</li>
+</ul>
+<h4>Backend Programming:</h4>
+<ul>
+<li>LAMP Stack : Apache2, MySQL, and PHP (Install it separately, don't use XAMPP)
+<br><em>Ref</em> : <a href="https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04">https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04</a>
+</li>
+<li>Composer
+<br><em>Ref</em>: <a href="https://getcomposer.org/doc/00-intro.md">https://getcomposer.org/doc/00-intro.md</a>
+</li>
+<li>Python &amp; Flask
+<br><em>Ref</em>: <a href="http://flask.pocoo.org/docs/0.12/installation/">http://flask.pocoo.org/docs/0.12/installation/</a>
+</li>
+</ul>
+<h4>DevOps:</h4>
+<ul>
+<li>Kubernetes (Kubctl + Minikube)
+<br><em>Ref</em>: <a href="https://kubernetes.io/docs/getting-started-guides/minikube/">https://kubernetes.io/docs/getting-started-guides/minikube/</a>
+</li>
+</ul>
+<hr />
+<h3>Learning</h3>
+<p><em>Estimation : 1 Week</em></p>
+<ul>
+<li>WPM
+<br>Estimation: 1 hour
+<br>Website: <a href="http://10fastfingers.com">http://10fastfingers.com</a>
+<br>Result: Upload screenshots of your fastest WPMs to the progress link that provided for you (see pinned post for more details)</li>
+<li>Git
+<br>Estimation: 2 hours
+<br>Website: <a href="https://try.github.io">https://try.github.io</a>
+<br>Result: Upload screenshot indicate you finish the course</li>
+<li>English
+<br>Estimation: 2 days
+<br>Website: <a href="https://www.duolingo.com/">https://www.duolingo.com/</a>
+<br>Result: Upload screenshot indicate you finish the course</li>
+<li>Linux command line
+<br>Estimation: 3 hours
+<br>Website: <a href="http://www.memrise.com/course/50252/shell-fu/">http://www.memrise.com/course/50252/shell-fu/</a>
+<br>Result: Upload screenshots indicate you finish the courses</li>
+<li>Docker
+<br>Estimation: 4 hours
+<br>Website: <a href="https://docs.docker.com/get-started/part2/">https://docs.docker.com/get-started/part2/</a>
+<br>Result : Upload link of dockerhub where you store your own docker image</li>
+</ul>
+<h4>Mobile Programming</h4>
+<ul>
+<li>Introduction to Java
+<br>Estimation: 5 hours
+<br>Website: <a href="https://www.codecademy.com/courses/learn-java">https://www.codecademy.com/courses/learn-java</a>
+<br>Result: Upload screenshots indicate you finish the courses</li>
+<li>Basic Android
+<br>Estimation: 1 week
+<br>Website: <a href="https://www.udacity.com/course/android-basics-user-interface--ud834">https://www.udacity.com/course/android-basics-user-interface--ud834</a>
+<br>Result: Upload screenshots indicate you finish the courses</li>
+</ul>
+<h4>Backend Programming</h4>
+<ul>
+<li>Python
+<br>Estimation: 5 hours
+<br>Website: <a href="https://www.codecademy.com/courses/learn-python">https://www.codecademy.com/courses/learn-python</a>
+<br>Result: Upload screenshot indicate you finish the course</li>
+</ul>
+<h4>DevOps</h4>
+<ul>
+<li>Kubernetes
+<br>Estimation: 5 hours
+<br>Website: <a href="https://www.katacoda.com/courses/kubernetes">https://www.katacoda.com/courses/kubernetes</a>
+<br>Result: Upload screenshot indicate you finish the course to the progress link that provided for you (see pinned post for more details)</li>
+<li>Docker Part I
+<br>Estimation: 2 hours
+<br>Website: <a href="https://www.katacoda.com/courses/docker">https://www.katacoda.com/courses/docker</a>
+</li>
+<li>Docker Part II
+<br>Estimation: 2 hours
+<br>Website: <a href="https://www.katacoda.com/courses/docker-production">https://www.katacoda.com/courses/docker-production</a>
+</li>
+</ul>
+<hr />
+<h3>Try Out</h3>
+<p><em>Estimation : 4 hours</em></p>
+<p>This is the last stage of the preparation period. Try Out will be held on wed, Jul 27, 2018 13:00. Details will be given later.</p>
+<hr />
+<h3>Note:</h3>
+<p>Due date of all task and learning is Jul 27, 2018, so please report all your result before that time
+You can report your result separately. More often you send report, more better
+Ask if you have a problem/blocker. Post your question to #trabia channel</p>
+<h4>More Help</h4>
+<p>Feel free to contact me on Slack (@hafizhanindito) for more help.</p>
+<p>Best regards,
+<br><strong>Hafiz Hanindito</strong>
+<br>- Mentor -</p>
+
+    </main>
+</div>
+<!-- The Loader. Is shown when pjax happens -->
+<div class="loader-wrap hiding hide">
+    <i class="fa fa-circle-o-notch fa-spin-fast"></i>
+</div>
+
+<!-- common libraries. required for every page-->
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/jquery/dist/jquery.min.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/jquery-pjax/jquery.pjax.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/tether/dist/js/tether.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/bootstrap/dist/js/bootstrap.min.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/slimScroll/jquery.slimscroll.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/widgster/widgster.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/pace.js/pace.jsdata-pace-options='{ "target": ".content-wrap", "ghostTime": 1000 }'></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/jquery-touchswipe/jquery.touchSwipe.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/js/bootstrap-fix/button.js></script>
+
+<!-- common app js -->
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/messenger/build/js/messenger.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/messenger/build/js/messenger-theme-flat.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/js/settings.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/js/app.js></script>
+
+<script id="test" src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/underscore/underscore.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/jquery.sparkline/index.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/jquery.sparkline/index.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/d3/d3.min.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/rickshaw/rickshaw.min.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/raphael/raphael-min.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/jQuery-Mapael/js/jquery.mapael.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/jQuery-Mapael/js/maps/usa_states.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/jQuery-Mapael/js/maps/world_countries.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/bootstrap_calendar/bootstrap_calendar/js/bootstrap_calendar.min.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/jquery-animateNumber/jquery.animateNumber.min.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/js/autobahn.min.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/js/autobahn.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/js/events.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/assets/vendor/moment/min/moment.min.js></script>
+<script src=https://refactory-id.s3.amazonaws.com/public/js/bootstrap-markdown.js></script>
+<script>
+$(function(){
+    $('[data-toggle="tooltip"]').tooltip()
+    if (Notification.permission !== "granted") {
+        Notification.requestPermission();
+    } else {
+    }
+    initiateNotificationEvent(true);
+})
+ var conn = new ab.Session('wss://socket.refactory.id',
+        function() {
+            conn.subscribe('contacts-1458', function(topic, data) {
+              pushNotificationEvent({topic, data});
+                // This is where you would add the new article to the DOM (beyond the scope of this tutorial)
+            });
+        },
+        function() {
+            console.warn('WebSocket connection closed');
+        },
+        {'skipSubprotocolCheck': true}
+    );
+</script>
+<script>
+  $(function () {
+
+    
+    
+    
+  });
+</script>
+</body>
+</html>
+
